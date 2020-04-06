@@ -5,12 +5,15 @@ from docx.shared import Inches,Pt
 from datetime import date
 from datetime import datetime
 import sys
+from time import sleep
+
 a = sys.argv[1]
+path = sys.argv[2]
 row_no = int(a)-2
 today = str(date.today())
 dt= str(datetime.now())
 
-df = pd.read_excel("F:\Atul\data1.xlsm")
+df = pd.read_excel(path)
 last_row = df.iloc[row_no,:]
 document = Document()
 style = document.styles['Normal']

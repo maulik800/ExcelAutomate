@@ -3,10 +3,13 @@ Sub RunPython()
     Dim shell As Object
     Dim exePath, scriptPath As String
     Dim rownumber As Integer
+    Dim myPath As String
+    myPath = Application.ActiveWorkbook.FullName
     rownumber = ActiveCell.Row
     Set shell = VBA.CreateObject("Wscript.Shell")
     exePath = """D:\anaconda3\python.exe"""
     scriptPath = "F:\Atul\parser.py"
-    shell.Run exePath & scriptPath & " " & rownumber
+    shell.Run exePath & scriptPath & " " & rownumber & " " & myPath
+    MsgBox "Your Letter is generated"
     
 End Sub
